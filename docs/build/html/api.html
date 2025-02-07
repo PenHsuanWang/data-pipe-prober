@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Documentation &mdash; data-pipe-prober 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to data-pipe-prober’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            data-pipe-prober
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#src.data_reader.DataReader"><code class="docutils literal notranslate"><span class="pre">DataReader</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#src.data_reader.DataReader.read"><code class="docutils literal notranslate"><span class="pre">DataReader.read()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#src.comparers.base_comparer.DataComparer"><code class="docutils literal notranslate"><span class="pre">DataComparer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#src.comparers.base_comparer.DataComparer.compare"><code class="docutils literal notranslate"><span class="pre">DataComparer.compare()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#src.comparers.row_comparer.RowLevelComparer"><code class="docutils literal notranslate"><span class="pre">RowLevelComparer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#src.comparers.row_comparer.RowLevelComparer.compare"><code class="docutils literal notranslate"><span class="pre">RowLevelComparer.compare()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#src.comparers.element_comparer.ElementwiseComparer"><code class="docutils literal notranslate"><span class="pre">ElementwiseComparer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#src.comparers.element_comparer.ElementwiseComparer.compare"><code class="docutils literal notranslate"><span class="pre">ElementwiseComparer.compare()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#src.comparers.pandas_row_comparer.PandasRowLevelComparer"><code class="docutils literal notranslate"><span class="pre">PandasRowLevelComparer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#src.comparers.pandas_row_comparer.PandasRowLevelComparer.compare"><code class="docutils literal notranslate"><span class="pre">PandasRowLevelComparer.compare()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#src.comparers.pandas_element_comparer.PandasElementwiseComparer"><code class="docutils literal notranslate"><span class="pre">PandasElementwiseComparer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#src.comparers.pandas_element_comparer.PandasElementwiseComparer.compare"><code class="docutils literal notranslate"><span class="pre">PandasElementwiseComparer.compare()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#src.reports.base_report.ReportGenerator"><code class="docutils literal notranslate"><span class="pre">ReportGenerator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#src.reports.base_report.ReportGenerator.generate"><code class="docutils literal notranslate"><span class="pre">ReportGenerator.generate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#src.reports.row_report.RowLevelReportGenerator"><code class="docutils literal notranslate"><span class="pre">RowLevelReportGenerator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#src.reports.row_report.RowLevelReportGenerator.generate"><code class="docutils literal notranslate"><span class="pre">RowLevelReportGenerator.generate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#src.reports.element_report.ElementwiseReportGenerator"><code class="docutils literal notranslate"><span class="pre">ElementwiseReportGenerator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#src.reports.element_report.ElementwiseReportGenerator.generate"><code class="docutils literal notranslate"><span class="pre">ElementwiseReportGenerator.generate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#src.reports.pandas_row_report.PandasRowLevelReportGenerator"><code class="docutils literal notranslate"><span class="pre">PandasRowLevelReportGenerator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#src.reports.pandas_row_report.PandasRowLevelReportGenerator.generate"><code class="docutils literal notranslate"><span class="pre">PandasRowLevelReportGenerator.generate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#src.reports.pandas_element_report.PandasElementwiseReportGenerator"><code class="docutils literal notranslate"><span class="pre">PandasElementwiseReportGenerator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#src.reports.pandas_element_report.PandasElementwiseReportGenerator.generate"><code class="docutils literal notranslate"><span class="pre">PandasElementwiseReportGenerator.generate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">data-pipe-prober</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-src.data_reader">
+<span id="api-documentation"></span><h1>API Documentation<a class="headerlink" href="#module-src.data_reader" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.data_reader.DataReader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.data_reader.</span></span><span class="sig-name descname"><span class="pre">DataReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spark</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'local'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'csv'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.data_reader.DataReader" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.data_reader.DataReader.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.data_reader.DataReader.read" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class" id="module-src.comparers.base_comparer">
+<dt class="sig sig-object py" id="src.comparers.base_comparer.DataComparer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.comparers.base_comparer.</span></span><span class="sig-name descname"><span class="pre">DataComparer</span></span><a class="headerlink" href="#src.comparers.base_comparer.DataComparer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.comparers.base_comparer.DataComparer.compare">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.comparers.base_comparer.DataComparer.compare" title="Link to this definition"></a></dt>
+<dd><p>Compare two DataFrames and return the differences.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class" id="module-src.comparers.row_comparer">
+<dt class="sig sig-object py" id="src.comparers.row_comparer.RowLevelComparer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.comparers.row_comparer.</span></span><span class="sig-name descname"><span class="pre">RowLevelComparer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">custom_condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.comparers.row_comparer.RowLevelComparer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#src.comparers.base_comparer.DataComparer" title="src.comparers.base_comparer.DataComparer"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataComparer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.comparers.row_comparer.RowLevelComparer.compare">
+<span class="sig-name descname"><span class="pre">compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.comparers.row_comparer.RowLevelComparer.compare" title="Link to this definition"></a></dt>
+<dd><p>Compare two DataFrames and return the differences.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class" id="module-src.comparers.element_comparer">
+<dt class="sig sig-object py" id="src.comparers.element_comparer.ElementwiseComparer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.comparers.element_comparer.</span></span><span class="sig-name descname"><span class="pre">ElementwiseComparer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.comparers.element_comparer.ElementwiseComparer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#src.comparers.base_comparer.DataComparer" title="src.comparers.base_comparer.DataComparer"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataComparer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.comparers.element_comparer.ElementwiseComparer.compare">
+<span class="sig-name descname"><span class="pre">compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.comparers.element_comparer.ElementwiseComparer.compare" title="Link to this definition"></a></dt>
+<dd><p>Compare two DataFrames and return the differences.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class" id="module-src.comparers.pandas_row_comparer">
+<dt class="sig sig-object py" id="src.comparers.pandas_row_comparer.PandasRowLevelComparer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.comparers.pandas_row_comparer.</span></span><span class="sig-name descname"><span class="pre">PandasRowLevelComparer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">custom_condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.comparers.pandas_row_comparer.PandasRowLevelComparer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#src.comparers.base_comparer.DataComparer" title="src.comparers.base_comparer.DataComparer"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataComparer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.comparers.pandas_row_comparer.PandasRowLevelComparer.compare">
+<span class="sig-name descname"><span class="pre">compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.comparers.pandas_row_comparer.PandasRowLevelComparer.compare" title="Link to this definition"></a></dt>
+<dd><p>Compare two DataFrames and return the differences.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class" id="module-src.comparers.pandas_element_comparer">
+<dt class="sig sig-object py" id="src.comparers.pandas_element_comparer.PandasElementwiseComparer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.comparers.pandas_element_comparer.</span></span><span class="sig-name descname"><span class="pre">PandasElementwiseComparer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.comparers.pandas_element_comparer.PandasElementwiseComparer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.comparers.pandas_element_comparer.PandasElementwiseComparer.compare">
+<span class="sig-name descname"><span class="pre">compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.comparers.pandas_element_comparer.PandasElementwiseComparer.compare" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class" id="module-src.reports.base_report">
+<dt class="sig sig-object py" id="src.reports.base_report.ReportGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.reports.base_report.</span></span><span class="sig-name descname"><span class="pre">ReportGenerator</span></span><a class="headerlink" href="#src.reports.base_report.ReportGenerator" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.reports.base_report.ReportGenerator.generate">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comparison_result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.reports.base_report.ReportGenerator.generate" title="Link to this definition"></a></dt>
+<dd><p>Generate a report file from the comparison results.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class" id="module-src.reports.row_report">
+<dt class="sig sig-object py" id="src.reports.row_report.RowLevelReportGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.reports.row_report.</span></span><span class="sig-name descname"><span class="pre">RowLevelReportGenerator</span></span><a class="headerlink" href="#src.reports.row_report.RowLevelReportGenerator" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#src.reports.base_report.ReportGenerator" title="src.reports.base_report.ReportGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReportGenerator</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.reports.row_report.RowLevelReportGenerator.generate">
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diff_result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.reports.row_report.RowLevelReportGenerator.generate" title="Link to this definition"></a></dt>
+<dd><p>Generate a report file from the comparison results.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class" id="module-src.reports.element_report">
+<dt class="sig sig-object py" id="src.reports.element_report.ElementwiseReportGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.reports.element_report.</span></span><span class="sig-name descname"><span class="pre">ElementwiseReportGenerator</span></span><a class="headerlink" href="#src.reports.element_report.ElementwiseReportGenerator" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#src.reports.base_report.ReportGenerator" title="src.reports.base_report.ReportGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReportGenerator</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.reports.element_report.ElementwiseReportGenerator.generate">
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">joined_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.reports.element_report.ElementwiseReportGenerator.generate" title="Link to this definition"></a></dt>
+<dd><p>Generate a report file from the comparison results.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class" id="module-src.reports.pandas_row_report">
+<dt class="sig sig-object py" id="src.reports.pandas_row_report.PandasRowLevelReportGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.reports.pandas_row_report.</span></span><span class="sig-name descname"><span class="pre">PandasRowLevelReportGenerator</span></span><a class="headerlink" href="#src.reports.pandas_row_report.PandasRowLevelReportGenerator" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.reports.pandas_row_report.PandasRowLevelReportGenerator.generate">
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diff_result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.reports.pandas_row_report.PandasRowLevelReportGenerator.generate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class" id="module-src.reports.pandas_element_report">
+<dt class="sig sig-object py" id="src.reports.pandas_element_report.PandasElementwiseReportGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.reports.pandas_element_report.</span></span><span class="sig-name descname"><span class="pre">PandasElementwiseReportGenerator</span></span><a class="headerlink" href="#src.reports.pandas_element_report.PandasElementwiseReportGenerator" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.reports.pandas_element_report.PandasElementwiseReportGenerator.generate">
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">merged_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.reports.pandas_element_report.PandasElementwiseReportGenerator.generate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to data-pipe-prober’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ben Wang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
