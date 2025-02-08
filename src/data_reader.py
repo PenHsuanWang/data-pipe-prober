@@ -35,7 +35,7 @@ class DataReader:
         :returns: A pandas DataFrame or Spark DataFrame.
         :raises ValueError: If the format or source type is unsupported.
         """
-        # 1. Local file read via pandas
+        # Local file read via pandas
         if self.source_type in ["local", "file"]:
             if self.fmt == "csv":
                 return pd.read_csv(self.source_path, header=0 if self.header else None)
@@ -44,7 +44,7 @@ class DataReader:
             else:
                 raise ValueError(f"Unsupported format for local files: {self.fmt}")
 
-        # 2. Spark-based reads for external/cloud sources
+        # Spark-based reads for external/cloud sources
         else:
             if self.source_type in ["s3", "azure", "abfs", "wasb"]:
                 return (self.spark.read.format(self.fmt)
@@ -54,14 +54,12 @@ class DataReader:
 
             elif self.source_type == "snowflake":
                 # Snowflake specifics:
-                # The user can pass "query" OR "dbtable" in self.options.
                 reader = self.spark.read.format("snowflake").options(**self.options)
                 if "query" in self.options:
-                    # Use a custom SQL query if provided:
+                    # Use a custom SQL query if provided
                     reader = reader.option("query", self.options["query"])
                 else:
-                    # Otherwise assume we want to read from a table:
-                    # self.source_path might be a table name or fully-qualified name
+                    # Otherwise assume we want to read from a table
                     reader = reader.option("dbtable", self.source_path)
                 return reader.load()
 
