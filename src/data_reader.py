@@ -47,20 +47,18 @@ class DataReader:
         # Spark-based reads for external/cloud sources
         else:
             if self.source_type in ["s3", "azure", "abfs", "wasb"]:
-                return (self.spark.read.format(self.fmt)
-                        .option("header", self.header)
-                        .options(**self.options)
-                        .load(self.source_path))
+                reader = self.spark.read.format(self.fmt)
+                reader = reader.option("header", self.header)
+                reader = reader.options(**self.options)
+                return reader.load(self.source_path)
 
             elif self.source_type == "snowflake":
-                # Snowflake specifics:
-                reader = self.spark.read.format("snowflake").options(**self.options)
+                reader = self.spark.read.format("snowflake")
                 if "query" in self.options:
-                    # Use a custom SQL query if provided
-                    reader = reader.option("query", self.options["query"])
+                    # If a query is provided, pass it in via options (and do not call .option())
+                    reader = reader.options(**self.options)
                 else:
-                    # Otherwise assume we want to read from a table
-                    reader = reader.option("dbtable", self.source_path)
+                    reader = reader.options(**self.options).option("dbtable", self.source_path)
                 return reader.load()
 
             else:

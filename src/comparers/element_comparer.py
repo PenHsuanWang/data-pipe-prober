@@ -24,4 +24,6 @@ class ElementwiseComparer(DataComparer):
             )
         if self.custom_condition:
             joined_df = joined_df.filter(self.custom_condition)
+        # Persist the DataFrame to avoid potential reentrant call issues during collect()
+        joined_df = joined_df.persist()
         return joined_df
