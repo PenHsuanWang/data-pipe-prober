@@ -1,6 +1,7 @@
 import pandas as pd
 from src.comparers.base_comparer import DataComparer
 
+
 class PandasRowLevelComparer(DataComparer):
     def __init__(self, custom_condition: str = None, key: str = None):
         self.custom_condition = custom_condition

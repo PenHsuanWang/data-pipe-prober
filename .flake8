@@ -1,0 +1,18 @@
+[flake8]
+# Set the maximum allowed line length (this example uses 88 to match Black’s default)
+max-line-length = 126
+
+# Extend or ignore specific warnings (E203 and W503 are commonly ignored with Black)
+extend-ignore = E203, W503
+
+# Exclude directories that shouldn’t be checked
+exclude =
+    .git,
+    __pycache__,
+    venv,
+    node_modules,
+    data,
+    build,
+    dist,
+    *.egg-info
+    examples

@@ -1,4 +1,3 @@
-from pyspark.sql.functions import col, when, lit
 from .base_comparer import DataComparer
 
 
